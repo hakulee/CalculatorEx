@@ -67,10 +67,28 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func unlimitedDivideButtonClicked(_ sender: Any) {
+        print(#function)
+        if let firstNumber = Int(firstTextField.text!), let secondNumber = Int(secondTextField.text!) {
+            if secondNumber != 0 {
+                let result = firstNumber % secondNumber
+                resultLabel.text = "= \(result)"
+            } else {
+                resultLabel.text = "0은 안됩니다"
+            }
+        } else {
+            resultLabel.text = "입력값이 잘못되었습니다."
+        }
+    }
     
-    
-    
-    
-    
+    @IBAction func squareButtonClicked(_ sender: Any) {
+        print(#function)
+        if let firstNumber = Int(firstTextField.text!), let secondNumber = Int(secondTextField.text!) {
+            let result = pow(Decimal(firstNumber), secondNumber)
+            resultLabel.text = "= \(result)"
+        } else {
+            resultLabel.text = "입력값이 잘못되었습니다."
+        }
+    }
 }
 
